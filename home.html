@@ -3,17 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home | Xynox Studios</title>
+<title>Home | XYNOX Studios</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* Hero sectie */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg,#ff007f,#00d4ff,#ff007f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s linear infinite;
+  background-size: 300%;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-top: 10px;
+}
+
+/* Dynamic release block */
+.dynamic-block {
+  width: 90%;
+  max-width: 1000px;
+  height: 350px;
+  margin: 0 auto 80px auto;
+  border-radius: 25px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(25px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 30px 100px rgba(0,0,0,.5);
+  transition: all .3s ease-in-out;
+}
+
+.dynamic-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.dynamic-block h2, .dynamic-block p {
+  position: relative;
+  z-index: 2;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.dynamic-block h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ff007f, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dynamic-block p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.dynamic-block:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 40px 120px rgba(255,0,127,.6), 0 40px 120px rgba(0,212,255,.4);
+}
+
+/* Grid / Cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto 80px auto;
+}
+
+.card, .smp-tile {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  transition: all .3s;
+}
+
+.card:hover, .smp-tile:hover{
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 40px 100px rgba(255,0,127,.6),0 40px 100px rgba(0,212,255,.4);
+}
+
+/* SMP tile */
+.smp-image{
+  width:100%;
+  border-radius:15px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.smp-image img{
+  width:100%;
+  height:auto;
+  transition: transform .3s;
+}
+
+.smp-tile:hover .smp-image img{
+  transform: scale(1.05);
+}
+
+/* Particles full-page */
+#particles{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .hero h1{ font-size:2rem; }
+  .hero p{ font-size:1rem; }
+  .dynamic-block{ height:250px; }
+  .grid{ grid-template-columns:1fr; gap:30px; }
+}
+</style>
 </head>
 <body>
-
 <canvas id="particles"></canvas>
-<div class="progress"></div>
 
 <nav>
-  <h2>Xynox Studios</h2>
+  <h2>XYNOX Studios</h2>
   <ul>
     <li><a href="home.html">Home</a></li>
     <li><a href="experiences.html">Experiences</a></li>
@@ -23,89 +172,85 @@
   </ul>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
   <h1>XYNOX STUDIOS</h1>
   <p>ULTRA CINEMATIC DIGITAL EXPERIENCES</p>
 </section>
 
-<!-- Dynamic release block -->
+<!-- Dynamic Release Block -->
 <section class="dynamic-block" id="dynamicRelease">
-  <img src="https://via.placeholder.com/800x300.png?text=InsaneSMP" alt="Release Image">
+  <img src="https://via.placeholder.com/1000x350.png?text=InsaneSMP" alt="Release Image">
   <h2>InsaneSMP</h2>
-  <p>Join our ultra cinematic SMP universe!</p>
+  <p>Step into the Nether portal!</p>
 </section>
 
+<!-- SMP Grid -->
 <section class="section">
-  <h2>Explore Our World</h2>
   <div class="grid">
-    <a href="https://insanesmp.xynoxstudios.com" class="smp-tile" target="_blank">
+    <a href="https://insanesmp.xynoxstudios.com" target="_blank" class="card smp-tile">
       <div class="smp-image">
         <img src="https://via.placeholder.com/600x300.png?text=INSANESMP" alt="INSANESMP">
       </div>
       <h3>InsaneSMP</h3>
-      <p>Step into the cinematic SMP!</p>
+      <p>Join our cinematic SMP universe!</p>
     </a>
   </div>
 </section>
 
-<section class="section">
-  <h2>Latest News</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Release 1</h3>
-      <p>Description for latest update or release.</p>
-    </div>
-    <div class="card">
-      <h3>Release 2</h3>
-      <p>Description for latest update or news item.</p>
-    </div>
-  </div>
-</section>
-
-<script src="script.js"></script>
 <script>
-const releases = [
-  {
-    img:"https://via.placeholder.com/800x300.png?text=InsaneSMP",
-    title:"InsaneSMP",
-    desc:"Step into the Nether portal!",
-    link:"https://insanesmp.xynoxstudios.com"
-  }
-];
+// Particles
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+function resizeCanvas(){ canvas.width = window.innerWidth; canvas.height = document.body.scrollHeight; }
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
-const dynamicBlock = document.getElementById("dynamicRelease");
-let current = 0;
-
-function updateRelease(){
-  const release = releases[current];
-  const img = dynamicBlock.querySelector("img");
-  const h2 = dynamicBlock.querySelector("h2");
-  const p = dynamicBlock.querySelector("p");
-
-  img.style.opacity = 0;
-  h2.style.opacity = 0;
-  p.style.opacity = 0;
-
-  setTimeout(()=>{
-    img.src = release.img;
-    h2.textContent = release.title;
-    p.textContent = release.desc;
-
-    img.style.opacity = 1;
-    h2.style.opacity = 1;
-    p.style.opacity = 1;
-  },500);
-
-  current = (current+1) % releases.length;
+let particles = [];
+for(let i=0;i<150;i++){
+  particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, size:Math.random()*2+1, speedX:(Math.random()-0.5)*0.3, speedY:(Math.random()-0.5)*0.3, opacity:Math.random()});
 }
 
+function animateParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    p.x+=p.speedX; p.y+=p.speedY;
+    if(p.x<0)p.x=canvas.width; if(p.x>canvas.width)p.x=0;
+    if(p.y<0)p.y=canvas.height; if(p.y>canvas.height)p.y=0;
+    ctx.fillStyle=`rgba(255,0,127,${p.opacity})`;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fill();
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// Dynamic release (can cycle multiple releases)
+const releases=[{img:"https://via.placeholder.com/1000x350.png?text=InsaneSMP", title:"InsaneSMP", desc:"Step into the Nether portal!", link:"#"}];
+const dynamicBlock=document.getElementById("dynamicRelease");
+let current=0;
+function updateRelease(){
+  const release=releases[current];
+  const img=dynamicBlock.querySelector("img");
+  const h2=dynamicBlock.querySelector("h2");
+  const p=dynamicBlock.querySelector("p");
+
+  img.style.opacity=0; h2.style.opacity=0; p.style.opacity=0;
+  setTimeout(()=>{
+    img.src=release.img;
+    h2.textContent=release.title;
+    p.textContent=release.desc;
+    img.style.opacity=1; h2.style.opacity=1; p.style.opacity=1;
+  },500);
+
+  current=(current+1)%releases.length;
+}
 setInterval(updateRelease,20000);
 
-dynamicBlock.addEventListener("click",()=>{
-  const release = releases[(current+releases.length-1)%releases.length];
-  if(release.link){
-    window.location.href = release.link;
-  }
+dynamicBlock.addEventListener("click", ()=>{
+  const release=releases[(current+releases.length-1)%releases.length];
+  if(release.link && release.link!=="#") window.location.href = release.link;
 });
 </script>
 </body>
