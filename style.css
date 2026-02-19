@@ -10,6 +10,7 @@ body{
   background:#05070d;
   color:white;
   overflow-x:hidden;
+  position: relative;
 }
 
 /* Navbar */
@@ -62,10 +63,41 @@ nav a:hover{
   z-index:9999;
 }
 
+/* Hero sectie - correct gepositioneerd */
+.hero {
+  position: relative;     /* niet fixed */
+  width: 100%;
+  height: 200px;          /* mooie hoogte */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;    /* ruimte naar volgende sectie */
+  z-index: 1;             /* boven particles */
+  pointer-events: auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #ff007f, #00d4ff, #ff007f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s linear infinite;
+  background-size: 300%;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
 /* Section */
 .section{
   min-height:100vh;
-  padding:140px 10%;
+  padding:80px 10%;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -140,6 +172,7 @@ button:hover{
   box-shadow:0 0 20px #6a00ff;
 }
 
+/* SMP Tiles */
 .smp-tile{
   display:flex;
   flex-direction:column;
@@ -162,42 +195,6 @@ button:hover{
   border-radius:15px;
   overflow:hidden;
   margin-bottom:20px;
-}
-
-.smp-image img{
-  width:100%;
-  height:auto;
-  display:block;
-  transition: transform .3s;
-}
-
-.smp-tile:hover .smp-image img{
-  transform: scale(1.05);
-}
-
-.smp-tile{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-decoration:none;
-  color:white;
-  overflow:hidden;
-  border:2px solid #ff007f;
-  transition:.3s;
-  position:relative;
-}
-
-.smp-tile:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 40px 100px rgba(255,0,127,.6), 0 40px 100px rgba(0,212,255,.4);
-}
-
-/* Tile Image */
-.smp-image{
-  width:100%;
-  border-radius:15px;
-  overflow:hidden;
-  margin-bottom:20px;
   position:relative;
 }
 
@@ -213,12 +210,12 @@ button:hover{
 }
 
 /* Particles overlay */
-.smp-particles{
+#particles{
   position:absolute;
   top:0;
   left:0;
   width:100%;
   height:100%;
   pointer-events:none;
-  z-index:1;
+  z-index:0;
 }
