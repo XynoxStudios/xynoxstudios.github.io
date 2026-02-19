@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* Hero Section */
+
 .hero{
   height:60vh;
   display:flex;
@@ -33,7 +33,7 @@
   opacity:.7;
 }
 
-/* Dynamic release block */
+
 .dynamic-block{
   width:80%;
   max-width:800px;
@@ -77,7 +77,7 @@
   margin:0;
 }
 
-/* Grid layout */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -87,7 +87,7 @@
   margin:0 auto 80px auto;
 }
 
-/* Card style */
+
 .card{
   background:rgba(255,255,255,.05);
   backdrop-filter:blur(20px);
@@ -106,7 +106,7 @@
   box-shadow:0 40px 100px rgba(255,0,127,.6),0 40px 100px rgba(0,212,255,.4);
 }
 
-/* SMP tile */
+
 .smp-tile{
   border:2px solid #ff007f;
 }
@@ -129,7 +129,7 @@
   transform: scale(1.05);
 }
 
-/* Responsive adjustments */
+
 @media (max-width:768px){
   .hero h1{ font-size:3rem; }
   .dynamic-block{ height:250px; }
@@ -151,45 +151,34 @@
   </ul>
 </nav>
 
-<!-- Hero -->
+
 <section class="hero">
   <h1>XYNOX STUDIOS</h1>
   <p>ULTRA CINEMATIC DIGITAL EXPERIENCES</p>
 </section>
 
-<!-- Dynamic Release Block -->
+
 <section class="dynamic-block" id="dynamicRelease">
-  <img src="https://via.placeholder.com/800x300.png?text=Release+1" alt="Release Image">
-  <h2>Release 1</h2>
-  <p>Click to explore the latest release!</p>
+  <img src="https://github.com/ikstokie1/ikstokie1.github.io/blob/main/files/xynox%20studios/Designer.png?raw=true" alt="Release Image">
+  <h2>InsaneSMP</h2>
+  <p>Join our ultra cinematic SMP universe!</p>
 </section>
 
-<!-- Explore Our World -->
+
 <section class="section">
   <div class="grid">
 
     <a href="https://insanesmp.xynoxstudios.com" target="_blank" class="card smp-tile">
       <div class="smp-image">
-        <img src="https://via.placeholder.com/400x250.png?text=INSANESMP" alt="INSANESMP">
+        <img src="https://github.com/ikstokie1/ikstokie1.github.io/blob/main/files/xynox%20studios/Designer.png?raw=true" alt="INSANESMP">
       </div>
-      <h3>INSANESMP</h3>
-      <p>Click to join our cinematic SMP universe!</p>
+      <h3>InsaneSMP</h3>
+      <p>Join our cinematic SMP universe!</p>
     </a>
-
-    <div class="card">
-      <h3>Creative Worlds</h3>
-      <p>Immersive custom-built environments.</p>
-    </div>
-
-    <div class="card">
-      <h3>Events & Challenges</h3>
-      <p>Community competitions, seasonal challenges & tournaments.</p>
-    </div>
 
   </div>
 </section>
 
-<!-- Latest News Teaser -->
 <section class="section">
   <h2>Latest News</h2>
   <div class="grid">
@@ -248,22 +237,10 @@ window.addEventListener("resize", ()=>{
 
 const releases = [
   {
-    img:"https://via.placeholder.com/800x300.png?text=Release+1",
-    title:"Release 1",
-    desc:"Click to explore the latest release!",
-    link:"#"
-  },
-  {
-    img:"https://via.placeholder.com/800x300.png?text=Release+2",
-    title:"Release 2",
-    desc:"New cinematic world is live!",
-    link:"#"
-  },
-  {
-    img:"https://via.placeholder.com/800x300.png?text=Release+3",
-    title:"INSANESMP",
+    img:"https://github.com/ikstokie1/ikstokie1.github.io/blob/main/files/xynox%20studios/Designer.png?raw=true",
+    title:"InsaneSMP",
     desc:"Step into the Nether portal!",
-    link:"https://insanesmp.xynoxstudios.com"
+    link:"#"
   }
 ];
 
@@ -276,7 +253,7 @@ function updateRelease(){
   const h2 = dynamicBlock.querySelector("h2");
   const p = dynamicBlock.querySelector("p");
 
-  // Fade out
+  
   img.style.opacity = 0;
   h2.style.opacity = 0;
   p.style.opacity = 0;
@@ -285,7 +262,7 @@ function updateRelease(){
     img.src = release.img;
     h2.textContent = release.title;
     p.textContent = release.desc;
-    // Fade in
+    
     img.style.opacity = 1;
     h2.style.opacity = 1;
     p.style.opacity = 1;
@@ -294,10 +271,10 @@ function updateRelease(){
   current = (current+1) % releases.length;
 }
 
-// Change every 20 seconds
+
 setInterval(updateRelease,20000);
 
-// Click redirect
+
 dynamicBlock.addEventListener("click",()=>{
   const release = releases[(current+releases.length-1)%releases.length];
   if(release.link && release.link!=="#"){
