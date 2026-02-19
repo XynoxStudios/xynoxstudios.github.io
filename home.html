@@ -185,6 +185,56 @@
   <p>Step into the Nether portal!</p>
 </section>
 
+<script>
+// Dynamic release block click + optional cycling
+const releases = [
+  {
+    img: "https://raw.githubusercontent.com/ikstokie1/ikstokie1.github.io/refs/heads/main/files/xynox%20studios/Designer.png",
+    title: "InsaneSMP",
+    desc: "Step into the Nether portal!",
+    link: "https://insanesmp.xynoxstudios.com" // <-- Zorg dat dit de echte link is
+  }
+];
+
+const dynamicBlock = document.getElementById("dynamicRelease");
+let current = 0;
+
+function updateRelease() {
+  const release = releases[current];
+  const img = dynamicBlock.querySelector("img");
+  const h2 = dynamicBlock.querySelector("h2");
+  const p = dynamicBlock.querySelector("p");
+
+  img.style.opacity = 0;
+  h2.style.opacity = 0;
+  p.style.opacity = 0;
+
+  setTimeout(() => {
+    img.src = release.img;
+    h2.textContent = release.title;
+    p.textContent = release.desc;
+
+    img.style.opacity = 1;
+    h2.style.opacity = 1;
+    p.style.opacity = 1;
+  }, 500);
+
+  current = (current + 1) % releases.length;
+}
+
+// Optioneel: auto-cycling elke 20 seconden
+setInterval(updateRelease, 20000);
+
+// Klik actie: ga naar link
+dynamicBlock.addEventListener("click", () => {
+  const release = releases[(current + releases.length - 1) % releases.length];
+  if (release.link && release.link !== "#") {
+    window.location.href = release.link;
+  }
+});
+</script>
+
+
 <!-- SMP Grid -->
 <section class="section">
   <div class="grid">
