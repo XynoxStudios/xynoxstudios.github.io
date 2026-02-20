@@ -1,4 +1,4 @@
-/* Scroll Reveal + Progress Bar */
+
 const sections = document.querySelectorAll(".section");
 window.addEventListener("scroll", () => {
   const trigger = window.innerHeight * 0.85;
@@ -16,7 +16,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* Full-page Particles Background */
+
 const canvas = document.getElementById("particles");
 if(canvas){
   const ctx = canvas.getContext("2d");
