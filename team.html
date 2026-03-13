@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - XYNOX Studios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="logo-container">
+                <h1 class="xynox-logo">XYNOX</h1>
+                <p class="logo-subtitle">STUDIOS</p>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <p class="loading-text">Initializing Experience</p>
+        </div>
+    </div>
+
+    <!-- PARTICLE BACKGROUND -->
+    <div id="particle-container" class="particle-container"></div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">XYNOX</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="experiences.html" class="nav-link">Experiences</a></li>
+                <li><a href="team.html" class="nav-link active">Team</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="support.html" class="nav-link">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">MEET THE TEAM</h1>
+            <p class="hero-subtitle">THE VISIONARIES BEHIND INSANESMP</p>
+            <div class="hero-divider"></div>
+        </div>
+    </section>
+
+    <div class="scroll-progress"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <!-- TEAM SECTION -->
+        <section class="team-section">
+            <h2 class="section-title">CORE TEAM</h2>
+            <div class="team-grid">
+
+                <!-- Team Member: Ikstokie1 -->
+                <div class="team-card glass-card">
+                    <div class="team-image-container">
+                        <img src="https://avatars.githubusercontent.com/u/138217519?v=4" alt="Ikstokie1">
+                        <div class="team-glow"></div>
+                    </div>
+                    <h3 class="team-name">Ikstokie1</h3>
+                    <p class="team-role">Founder & CEO</p>
+                    <div class="team-socials">
+                        <a href="https://x.com/ikstokie1" target="_blank" title="X / Twitter">𝕏</a>
+                        <a href="https://www.instagram.com/ikstokie1/" target="_blank" title="Instagram">📸</a>
+                        <a href="https://www.reddit.com/user/Unknown_RBLX/" target="_blank" title="Reddit">👽</a>
+                    </div>
+                </div>
+
+                <!-- Team Member: DriverDenny1 -->
+                <div class="team-card glass-card">
+                    <div class="team-image-container">
+                        <img src="https://yt3.googleusercontent.com/7pbTBeJMyl8wN-BDCKC-omD_rSaBm2_MDHV-jEeZXzljnIHgbPmbGA2bTb5eLy_3ZKUJsDjwAA=s160-c-k-c0x00ffffff-no-rj" alt="DriverDenny1">
+                        <div class="team-glow"></div>
+                    </div>
+                    <h3 class="team-name">DriverDenny1</h3>
+                    <p class="team-role">Co‑Founder</p>
+                    <div class="team-socials">
+                        <a href="https://www.youtube.com/@DriverDenny1" target="_blank" title="YouTube">📺</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- OPTIONAL SECTION (can remove if not needed) -->
+        <!-- 
+            Since XYNOX Studios currently has a small core team,
+            we can omit the Departments & Careers sections 
+            or replace them with community roles instead. 
+        -->
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>XYNOX STUDIOS</h4>
+                <p>Focused on InsaneSMP — our Minecraft community and custom experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>SOCIAL MEDIA</h4>
+                <div class="social-links">
+                    <a href="https://discord.gg/xynox" target="_blank" title="Discord">💬</a>
+                    <a href="https://youtube.com/@xynoxstudios" target="_blank" title="YouTube">📺</a>
+                    <a href="https://twitter.com/xynoxstudios" target="_blank" title="𝕏">𝕏</a>
+                    <a href="https://instagram.com/xynoxstudios" target="_blank" title="Instagram">📸</a>
+                    <a href="https://github.com/xynoxstudios" target="_blank" title="GitHub">💻</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 XYNOX Studios. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
